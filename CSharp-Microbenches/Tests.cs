@@ -118,11 +118,6 @@ namespace CSharp_Microbenches
             return primes.Count & number;
         }
 
-        public static double MemTest(int i)
-        {
-            var array = new double[100000];
-            return array.Length + i;
-        }
         
         public static double Sestoft(int input)
         {
