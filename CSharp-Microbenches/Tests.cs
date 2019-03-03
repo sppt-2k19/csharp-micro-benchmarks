@@ -6,33 +6,33 @@ namespace CSharp_Microbenches
 {
     static class Tests
     {
-        public static double ScaleVector2D(int scalar){
+        public static float ScaleVector2D(int scalar){
             var v = new Vector2(1);
             v *= scalar;
             return v.Length();
         }
 
-        public static double ScaleVector3D(int scalar){
+        public static float ScaleVector3D(int scalar){
             var v = new Vector3(1);
             v *= scalar;
             return v.Length();
         }
 
-        public static double MultiplyVector2D(int i){
+        public static float MultiplyVector2D(int i){
             var v1 = new Vector2(1);
             var v2 = new Vector2(i);
             v1 *= v2;
             return v1.Length();
         }
 
-        public static double MultiplyVector3D(int i){
+        public static float MultiplyVector3D(int i){
             var v1 = new Vector3(1);
             var v2 = new Vector3(i);
             v1 *= v2;
             return v1.Length();
         }
 
-        public static double TranslateVector2D(int i)
+        public static float TranslateVector2D(int i)
         {
             var v1 = new Vector2(1);
             var v2 = new Vector2(i);
@@ -40,50 +40,50 @@ namespace CSharp_Microbenches
             return v3.Length();
         }
 
-        public static double TranslateVector3D(int i){
+        public static float TranslateVector3D(int i){
             var v1 = new Vector3(1);
             var v2 = new Vector3(i);
             var v3 = v1 + v2;
             return v3.Length();
         }
 
-        public static double SubtractVector2D(int i){
+        public static float SubtractVector2D(int i){
             var v1 = new Vector2(i);
             var v2 = new Vector2(1);
             v1 -= v2;
             return v1.Length();
         }
 
-        public static double SubtractVector3D(int i){
+        public static float SubtractVector3D(int i){
             var v1 = new Vector2(i);
             var v2 = new Vector2(1);
             v1 -= v2;
             return v1.Length();
         }
 
-        public static double LengthVector2D(int i){
+        public static float LengthVector2D(int i){
             var v1 = new Vector2(i);
             return v1.Length();
         }
 
-        public static double LengthVector3D(int i){
+        public static float LengthVector3D(int i){
             var v1 = new Vector3(i);
             return v1.Length();
         }
 
-        public static double Dotproduct2D(int i){
+        public static float Dotproduct2D(int i){
             var v1 = new Vector2(1);
             var v2 = new Vector2(i);
             return Vector2.Dot(v1, v2);
         }
 
-        public static double Dotproduct3D(int i){
+        public static float Dotproduct3D(int i){
             var v1 = new Vector3(1);
             var v2 = new Vector3(i);
             return Vector3.Dot(v1, v2);
         }
         
-        public static double Primes(int number)
+        public static float Primes(int number)
         {
             var realNumber = 100;
             
