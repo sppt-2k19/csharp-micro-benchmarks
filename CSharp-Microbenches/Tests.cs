@@ -1,11 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 
 namespace CSharp_Microbenches
 {
     static class Tests
     {
+        public static float FillArray(int dummy)
+        {
+            const int n = 4, m = 4;
+            var random = new Random();
+            int[,] array = new int[n, m];
+            
+            for (var i=0;i<n;++i)
+            for (var j=0;j<m;++j)
+                array[i, j] = random.Next();
+
+            return array[n - 1, m - 1];
+        }
+        public static float FillJaggedArray(int dummy)
+        {
+            const int n = 4, m = 4;
+            var random = new Random();
+            int[][] array = Enumerable.Range(0, n).Select(i => new int[m]).ToArray();
+            
+            for (var i=0;i<n;++i)
+            for (var j=0;j<m;++j)
+                array[i][j] = random.Next();
+            
+            return array[n - 1][m - 1];
+        }
+    
+    
         public static float ScaleVector2D(int scalar){
             var v = new Vector2(1);
             v *= scalar;
