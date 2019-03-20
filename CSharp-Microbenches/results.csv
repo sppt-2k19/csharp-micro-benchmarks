@@ -1,0 +1,17 @@
+Test,Mean,Deviation,Count
+Primes,1457,965,13,074,262144
+RandomizeArray,2541,693,17,171,131072
+FibonacciRecursive,116,331,1,238,4194304
+FibonacciIterative,91,523,1,161,4194304
+ScaleVector2D,6,938,0,040,67108864
+ScaleVector3D,4,266,0,098,67108864
+MultiplyVector2D,6,279,0,042,67108864
+MultiplyVector3D,4,311,0,145,67108864
+TranslateVector2D,6,175,0,114,67108864
+TranslateVector3D,4,181,0,048,67108864
+SubtractVector2D,6,038,0,056,67108864
+SubtractVector3D,6,295,0,471,67108864
+LengthVector2D,4,618,0,079,67108864
+LengthVector3D,3,787,0,070,67108864
+DotProductVector2D,4,578,0,038,67108864
+DotProductVector3D,3,794,0,065,67108864
