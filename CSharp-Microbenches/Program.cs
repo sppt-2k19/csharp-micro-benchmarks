@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 
 namespace CSharp_Microbenches
 {
@@ -13,6 +15,9 @@ namespace CSharp_Microbenches
             var minTime = 250 * 1000000.0;
             var result = 0.0;
 
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
+            
             var results = new List<Tuple<string, double, double, int, double>>
             {
                 Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
