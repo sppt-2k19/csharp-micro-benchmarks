@@ -31,12 +31,8 @@ namespace CSharp_Microbenches
             } while (runningTime < minTime && count < int.MaxValue / 2);
         
             var mean = deltaTime / iterations;
-            var standardDeviation = Math.Sqrt((deltaTimeSquared - mean * mean * iterations) / (iterations - 1));
-            Console.WriteLine($"{msg};{mean};{standardDeviation};{count}"
-                .Replace(',', '.')
-                .Replace(';', ',')
-            );
-            //            Console.WriteLine($"{msg} done");
+            var standardDeviation = Math.Sqrt(Math.Abs(deltaTimeSquared - mean * mean * iterations) / (iterations - 1));
+            Console.WriteLine($"{msg},{mean},{standardDeviation},{count}");
             return new Tuple<string, double, double, int, double>(msg, mean, standardDeviation, count, dummy);
         }
     }
