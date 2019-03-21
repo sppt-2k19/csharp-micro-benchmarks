@@ -22,7 +22,7 @@ namespace CSharp_Microbenches
         }
 
         public static float FibonacciRecursive(int dummy) => FibonacciRecursive(0, 1, 150);
-        public static float FibonacciRecursive(int current, int next, int no)
+        private static float FibonacciRecursive(int current, int next, int no)
         {
             if (no == 0) return current + next;
             return FibonacciRecursive(next, current + next, no - 1);
@@ -43,7 +43,77 @@ namespace CSharp_Microbenches
             return c;
         }
         
-    
+        private const string DefaultGameOfLifeGrid = @"
+10000
+00110
+00101
+";
+        public static float IterateGameOfLifeTimes(int dummy)
+        {
+            
+            var grid = DefaultGameOfLifeGrid;
+            for (int i = 0; i <= 6; i++)
+            {
+                grid = IterateGrid(grid);
+            }
+
+            return 0;
+        }
+        
+        private static string IterateGrid(string grid)
+                {
+                    var lines = grid.Split(new []{'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+                    var width = lines.FirstOrDefault().Length;
+                    var height = lines.Count();
+        
+                    int ComputeNeighbours(int x, int y)
+                    {
+                        var arr = new[]
+                        {
+                            (-1, -1), (0, -1), (1, -1),
+                            (-1, 0),           (1,  0),
+                            (-1, 1),  (0,  1), (1,  1)
+                        };
+        
+                        return arr.Select(t =>
+                        {
+                            var (dx, dy) = t;
+                            int nx = x + dx, ny = y + dy;
+                            if (nx >= 0 && nx < width && ny >= 0 && ny < height &&
+                                lines[ny][nx] == '1')
+                            {
+                                return 1;
+                            }
+                            else
+                            {
+                                return 0;
+                            }
+                        }).Sum();
+                    }
+        
+                    char Life(int x, int y, char c)
+                    {
+                        switch ((c, ComputeNeighbours(x, y)))
+                        {
+                            case var tuple when tuple == ('1', 2):
+                                return c;
+                            case var tuple when tuple.Item2 == (3):
+                                return '1';
+                            default:
+                                return '0';
+                        }
+                    }
+        
+                    var newLines = lines.Select((line, y) =>
+                    {
+                        var chars = line.ToCharArray();
+                        var values = chars.Select((c, x) => Life(x, y, c)).ToArray();
+                        return new string(values);
+                    });
+                    
+                    return string.Join("\r\n", newLines);
+                }
+
     
         public static float ScaleVector2D(int scalar){
             var v = new Vector2(1);
@@ -151,9 +221,9 @@ namespace CSharp_Microbenches
         }
 
         
-        public static double Sestoft(int input)
+        public static float Sestoft(int input)
         {
-            var x = 1.1 * (input & 0xFF);
+            var x = 1.1f * (input & 0xFF);
             return x * x * x * x * x * x * x * x * x * x * x * x * x * x * x * x * x * x * x * x;
         }
     }

@@ -4,6 +4,7 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <RootNamespace>CSharp_Microbenches</RootNamespace>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
 </Project>
