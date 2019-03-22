@@ -11,7 +11,7 @@ namespace CSharp_Microbenches
         
         public static float RunInvasionPercolation(int dummy)
         {
-            var res = InvasionPercolation.InvasionPercolationPriorityQueue(8, 30, dummy);
+            var res = InvasionPercolation.InvasionPercolationPriorityQueue(5, 10, dummy);
             return res.Length;
         }
         
@@ -58,7 +58,7 @@ namespace CSharp_Microbenches
         public static float IterateGameOfLifeTimes(int dummy)
         {
             var grid = DefaultGameOfLifeGrid;
-            for (int i = 0; i <= 6; i++)
+            for (int i = 0; i <= 4; i++)
             {
                 grid = IterateGrid(grid);
             }
