@@ -24,6 +24,7 @@ namespace CSharp_Microbenches
                 Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
                 Benchmark.Mark8("RandomizeArray", Tests.RandomizeArray, iterations, minTime),
                 Benchmark.Mark8("GameOfLife", Tests.IterateGameOfLifeTimes, iterations, minTime),
+                Benchmark.Mark8("InvasionPercolation", Tests.RunInvasionPercolation, iterations, minTime),
                 Benchmark.Mark8("FibonacciRecursive", Tests.FibonacciRecursive, iterations, minTime),
                 Benchmark.Mark8("FibonacciIterative", Tests.FibonacciIterative, iterations, minTime),
                 

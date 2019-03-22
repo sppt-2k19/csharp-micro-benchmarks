@@ -7,4 +7,14 @@
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="C5" Version="2.5.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="ResistanceType, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\ResistanceType.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>

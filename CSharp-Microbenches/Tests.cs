@@ -8,6 +8,13 @@ namespace CSharp_Microbenches
 {
     static class Tests
     {
+        
+        public static float RunInvasionPercolation(int dummy)
+        {
+            var res = InvasionPercolation.InvasionPercolationPriorityQueue(8, 30, dummy);
+            return res.Length;
+        }
+        
         public static float RandomizeArray(int dummy)
         {
             const int n = 4, m = 4;
@@ -50,7 +57,6 @@ namespace CSharp_Microbenches
 ";
         public static float IterateGameOfLifeTimes(int dummy)
         {
-            
             var grid = DefaultGameOfLifeGrid;
             for (int i = 0; i <= 6; i++)
             {
@@ -60,59 +66,59 @@ namespace CSharp_Microbenches
             return 0;
         }
         
-        private static string IterateGrid(string grid)
+        static string IterateGrid(string grid)
+        {
+            var lines = grid.Split(new []{'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+            var width = lines.FirstOrDefault().Length;
+            var height = lines.Count();
+
+            int ComputeNeighbours(int x, int y)
+            {
+                var arr = new[]
                 {
-                    var lines = grid.Split(new []{'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
-                    var width = lines.FirstOrDefault().Length;
-                    var height = lines.Count();
-        
-                    int ComputeNeighbours(int x, int y)
+                    (-1, -1), (0, -1), (1, -1),
+                    (-1, 0),           (1,  0),
+                    (-1, 1),  (0,  1), (1,  1)
+                };
+
+                return arr.Select(t =>
+                {
+                    var (dx, dy) = t;
+                    int nx = x + dx, ny = y + dy;
+                    if (nx >= 0 && nx < width && ny >= 0 && ny < height &&
+                        lines[ny][nx] == '1')
                     {
-                        var arr = new[]
-                        {
-                            (-1, -1), (0, -1), (1, -1),
-                            (-1, 0),           (1,  0),
-                            (-1, 1),  (0,  1), (1,  1)
-                        };
-        
-                        return arr.Select(t =>
-                        {
-                            var (dx, dy) = t;
-                            int nx = x + dx, ny = y + dy;
-                            if (nx >= 0 && nx < width && ny >= 0 && ny < height &&
-                                lines[ny][nx] == '1')
-                            {
-                                return 1;
-                            }
-                            else
-                            {
-                                return 0;
-                            }
-                        }).Sum();
+                        return 1;
                     }
-        
-                    char Life(int x, int y, char c)
+                    else
                     {
-                        switch ((c, ComputeNeighbours(x, y)))
-                        {
-                            case var tuple when tuple == ('1', 2):
-                                return c;
-                            case var tuple when tuple.Item2 == (3):
-                                return '1';
-                            default:
-                                return '0';
-                        }
+                        return 0;
                     }
-        
-                    var newLines = lines.Select((line, y) =>
-                    {
-                        var chars = line.ToCharArray();
-                        var values = chars.Select((c, x) => Life(x, y, c)).ToArray();
-                        return new string(values);
-                    });
-                    
-                    return string.Join("\r\n", newLines);
+                }).Sum();
+            }
+
+            char Life(int x, int y, char c)
+            {
+                switch ((c, ComputeNeighbours(x, y)))
+                {
+                    case var tuple when tuple == ('1', 2):
+                        return c;
+                    case var tuple when tuple.Item2 == (3):
+                        return '1';
+                    default:
+                        return '0';
                 }
+            }
+
+            var newLines = lines.Select((line, y) =>
+            {
+                var chars = line.ToCharArray();
+                var values = chars.Select((c, x) => Life(x, y, c)).ToArray();
+                return new string(values);
+            });
+            
+            return string.Join("\r\n", newLines);
+        }
 
     
         public static float ScaleVector2D(int scalar){
