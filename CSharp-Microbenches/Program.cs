@@ -20,6 +20,10 @@ namespace CSharp_Microbenches
             
             var results = new List<Tuple<string, double, double, int, double>>
             {
+                Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime),
+                Benchmark.Mark8("MapReduce Linq", Tests.MapReduceLinq, iterations, minTime),
+                Benchmark.Mark8("MapReduce Struct", Tests.MapReduceStruct, iterations, minTime),
+                
                 Benchmark.Mark8("Sestoft Multiply", Tests.Sestoft, iterations, minTime),
                 Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
                 Benchmark.Mark8("RandomizeArray", Tests.RandomizeArray, iterations, minTime),

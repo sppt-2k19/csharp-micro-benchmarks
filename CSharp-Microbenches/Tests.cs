@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace CSharp_Microbenches
 {
-    static class Tests
+    static partial class Tests
     {
         
         public static float RunInvasionPercolation(int dummy)
