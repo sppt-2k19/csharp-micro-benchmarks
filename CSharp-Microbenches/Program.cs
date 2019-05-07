@@ -4,6 +4,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using SestoftBenchmark;
 
 namespace CSharp_Microbenches
 {
@@ -17,8 +18,8 @@ namespace CSharp_Microbenches
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InvariantCulture;
-            
-            var results = new List<Tuple<string, double, double, int, double>>
+            var d = Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime);
+            var results = new List<(string label, double mean, double deviation, int count, double dummy)>
             {
                 Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime),
                 Benchmark.Mark8("MapReduce Linq", Tests.MapReduceLinq, iterations, minTime),

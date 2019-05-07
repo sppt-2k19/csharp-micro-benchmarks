@@ -25,7 +25,7 @@ namespace CSharp_Microbenches
             for (var j=0;j<m;++j)
                 array[i, j] = random.Next();
 
-            return array[n - 1, m - 1];
+            return dummy + array[n - 1, m - 1];
         }
 
         public static float FibonacciRecursive(int dummy) => FibonacciRecursive(0, 1, 150);
@@ -63,7 +63,7 @@ namespace CSharp_Microbenches
                 grid = IterateGrid(grid);
             }
 
-            return 0;
+            return dummy + 0.0f;
         }
         
         static string IterateGrid(string grid)
