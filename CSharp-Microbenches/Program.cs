@@ -22,28 +22,135 @@ namespace CSharp_Microbenches
             var results = new List<(string label, double mean, double deviation, int count, double dummy)>
             {
                 Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime),
+                Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime),
+                Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime),
+                Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime),
+                Benchmark.Mark8("MapReduce Foreach", Tests.MapReduceForeach, iterations, minTime),
+                
                 Benchmark.Mark8("MapReduce Linq", Tests.MapReduceLinq, iterations, minTime),
+                Benchmark.Mark8("MapReduce Linq", Tests.MapReduceLinq, iterations, minTime),
+                Benchmark.Mark8("MapReduce Linq", Tests.MapReduceLinq, iterations, minTime),
+                Benchmark.Mark8("MapReduce Linq", Tests.MapReduceLinq, iterations, minTime),
+                Benchmark.Mark8("MapReduce Linq", Tests.MapReduceLinq, iterations, minTime),
+                
+                Benchmark.Mark8("MapReduce Struct", Tests.MapReduceStruct, iterations, minTime),
+                Benchmark.Mark8("MapReduce Struct", Tests.MapReduceStruct, iterations, minTime),
+                Benchmark.Mark8("MapReduce Struct", Tests.MapReduceStruct, iterations, minTime),
+                Benchmark.Mark8("MapReduce Struct", Tests.MapReduceStruct, iterations, minTime),
                 Benchmark.Mark8("MapReduce Struct", Tests.MapReduceStruct, iterations, minTime),
                 
                 Benchmark.Mark8("Sestoft Multiply", Tests.Sestoft, iterations, minTime),
+                Benchmark.Mark8("Sestoft Multiply", Tests.Sestoft, iterations, minTime),
+                Benchmark.Mark8("Sestoft Multiply", Tests.Sestoft, iterations, minTime),
+                Benchmark.Mark8("Sestoft Multiply", Tests.Sestoft, iterations, minTime),
+                Benchmark.Mark8("Sestoft Multiply", Tests.Sestoft, iterations, minTime),
+                
                 Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
+                Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
+                Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
+                Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
+                Benchmark.Mark8("Primes", Tests.Primes, iterations, minTime),
+                
                 Benchmark.Mark8("RandomizeArray", Tests.RandomizeArray, iterations, minTime),
+                Benchmark.Mark8("RandomizeArray", Tests.RandomizeArray, iterations, minTime),
+                Benchmark.Mark8("RandomizeArray", Tests.RandomizeArray, iterations, minTime),
+                Benchmark.Mark8("RandomizeArray", Tests.RandomizeArray, iterations, minTime),
+                Benchmark.Mark8("RandomizeArray", Tests.RandomizeArray, iterations, minTime),
+                
                 Benchmark.Mark8("GameOfLife", Tests.IterateGameOfLifeTimes, iterations, minTime),
+                Benchmark.Mark8("GameOfLife", Tests.IterateGameOfLifeTimes, iterations, minTime),
+                Benchmark.Mark8("GameOfLife", Tests.IterateGameOfLifeTimes, iterations, minTime),
+                Benchmark.Mark8("GameOfLife", Tests.IterateGameOfLifeTimes, iterations, minTime),
+                Benchmark.Mark8("GameOfLife", Tests.IterateGameOfLifeTimes, iterations, minTime),
+                
                 Benchmark.Mark8("InvasionPercolation", Tests.RunInvasionPercolation, iterations, minTime),
+                Benchmark.Mark8("InvasionPercolation", Tests.RunInvasionPercolation, iterations, minTime),
+                Benchmark.Mark8("InvasionPercolation", Tests.RunInvasionPercolation, iterations, minTime),
+                Benchmark.Mark8("InvasionPercolation", Tests.RunInvasionPercolation, iterations, minTime),
+                Benchmark.Mark8("InvasionPercolation", Tests.RunInvasionPercolation, iterations, minTime),
+                
                 Benchmark.Mark8("FibonacciRecursive", Tests.FibonacciRecursive, iterations, minTime),
+                Benchmark.Mark8("FibonacciRecursive", Tests.FibonacciRecursive, iterations, minTime),
+                Benchmark.Mark8("FibonacciRecursive", Tests.FibonacciRecursive, iterations, minTime),
+                Benchmark.Mark8("FibonacciRecursive", Tests.FibonacciRecursive, iterations, minTime),
+                Benchmark.Mark8("FibonacciRecursive", Tests.FibonacciRecursive, iterations, minTime),
+                
+                Benchmark.Mark8("FibonacciIterative", Tests.FibonacciIterative, iterations, minTime),
+                Benchmark.Mark8("FibonacciIterative", Tests.FibonacciIterative, iterations, minTime),
+                Benchmark.Mark8("FibonacciIterative", Tests.FibonacciIterative, iterations, minTime),
+                Benchmark.Mark8("FibonacciIterative", Tests.FibonacciIterative, iterations, minTime),
                 Benchmark.Mark8("FibonacciIterative", Tests.FibonacciIterative, iterations, minTime),
                 
                 Benchmark.Mark8("ScaleVector2D", Tests.ScaleVector2D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector2D", Tests.ScaleVector2D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector2D", Tests.ScaleVector2D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector2D", Tests.ScaleVector2D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector2D", Tests.ScaleVector2D, iterations, minTime),
+                
                 Benchmark.Mark8("ScaleVector3D", Tests.ScaleVector3D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector3D", Tests.ScaleVector3D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector3D", Tests.ScaleVector3D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector3D", Tests.ScaleVector3D, iterations, minTime),
+                Benchmark.Mark8("ScaleVector3D", Tests.ScaleVector3D, iterations, minTime),
+                
                 Benchmark.Mark8("MultiplyVector2D", Tests.MultiplyVector2D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector2D", Tests.MultiplyVector2D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector2D", Tests.MultiplyVector2D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector2D", Tests.MultiplyVector2D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector2D", Tests.MultiplyVector2D, iterations, minTime),
+                
                 Benchmark.Mark8("MultiplyVector3D", Tests.MultiplyVector3D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector3D", Tests.MultiplyVector3D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector3D", Tests.MultiplyVector3D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector3D", Tests.MultiplyVector3D, iterations, minTime),
+                Benchmark.Mark8("MultiplyVector3D", Tests.MultiplyVector3D, iterations, minTime),
+                
                 Benchmark.Mark8("TranslateVector2D", Tests.TranslateVector2D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector2D", Tests.TranslateVector2D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector2D", Tests.TranslateVector2D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector2D", Tests.TranslateVector2D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector2D", Tests.TranslateVector2D, iterations, minTime),
+                
                 Benchmark.Mark8("TranslateVector3D", Tests.TranslateVector3D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector3D", Tests.TranslateVector3D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector3D", Tests.TranslateVector3D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector3D", Tests.TranslateVector3D, iterations, minTime),
+                Benchmark.Mark8("TranslateVector3D", Tests.TranslateVector3D, iterations, minTime),
+                
                 Benchmark.Mark8("SubtractVector2D", Tests.SubtractVector2D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector2D", Tests.SubtractVector2D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector2D", Tests.SubtractVector2D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector2D", Tests.SubtractVector2D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector2D", Tests.SubtractVector2D, iterations, minTime),
+                
                 Benchmark.Mark8("SubtractVector3D", Tests.SubtractVector3D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector3D", Tests.SubtractVector3D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector3D", Tests.SubtractVector3D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector3D", Tests.SubtractVector3D, iterations, minTime),
+                Benchmark.Mark8("SubtractVector3D", Tests.SubtractVector3D, iterations, minTime),
+                
                 Benchmark.Mark8("LengthVector2D", Tests.LengthVector2D, iterations, minTime),
+                Benchmark.Mark8("LengthVector2D", Tests.LengthVector2D, iterations, minTime),
+                Benchmark.Mark8("LengthVector2D", Tests.LengthVector2D, iterations, minTime),
+                Benchmark.Mark8("LengthVector2D", Tests.LengthVector2D, iterations, minTime),
+                Benchmark.Mark8("LengthVector2D", Tests.LengthVector2D, iterations, minTime),
+                
                 Benchmark.Mark8("LengthVector3D", Tests.LengthVector3D, iterations, minTime),
+                Benchmark.Mark8("LengthVector3D", Tests.LengthVector3D, iterations, minTime),
+                Benchmark.Mark8("LengthVector3D", Tests.LengthVector3D, iterations, minTime),
+                Benchmark.Mark8("LengthVector3D", Tests.LengthVector3D, iterations, minTime),
+                Benchmark.Mark8("LengthVector3D", Tests.LengthVector3D, iterations, minTime),
+                
                 Benchmark.Mark8("DotProductVector2D", Tests.DotProduct2D, iterations, minTime),
+                Benchmark.Mark8("DotProductVector2D", Tests.DotProduct2D, iterations, minTime),
+                Benchmark.Mark8("DotProductVector2D", Tests.DotProduct2D, iterations, minTime),
+                Benchmark.Mark8("DotProductVector2D", Tests.DotProduct2D, iterations, minTime),
+                Benchmark.Mark8("DotProductVector2D", Tests.DotProduct2D, iterations, minTime),
+                
+                Benchmark.Mark8("DotProductVector3D", Tests.DotProduct3D, iterations, minTime),
+                Benchmark.Mark8("DotProductVector3D", Tests.DotProduct3D, iterations, minTime),
+                Benchmark.Mark8("DotProductVector3D", Tests.DotProduct3D, iterations, minTime),
+                Benchmark.Mark8("DotProductVector3D", Tests.DotProduct3D, iterations, minTime),
                 Benchmark.Mark8("DotProductVector3D", Tests.DotProduct3D, iterations, minTime)
             };
 
