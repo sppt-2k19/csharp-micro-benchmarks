@@ -12,6 +12,12 @@ namespace CSharp_Microbenches
     {
         static void Main(string[] args)
         {
+            
+#if DEBUG 
+            var mode = "debug";
+#else
+            var mode = "release";
+#endif
             var iterations = 5;
             var minTime = 250 * 1000000.0;
             var result = 0.0;
@@ -156,7 +162,7 @@ namespace CSharp_Microbenches
 
 
 
-            File.WriteAllText("results.csv",
+            File.WriteAllText($"results-{mode}.csv",
                 $"Test,Mean,Deviation,Count\n{string.Join('\n', results.Select(t => $"{t.Item1},{t.Item2:F3},{t.Item3:F3},{t.Item4}"))}");
                 
             Console.WriteLine("\n" + results.Count);
